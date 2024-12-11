@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 # from blog import views as blog_views  #  or from blog.views import my_blog
 
+
 urlpatterns = [
     #  or path('blog/', blog.views.blog, name='blog')  #  or path('blog/', my_blog, name='blog')
-    path("", include("blog.urls"), name="blog-urls"), 
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
+    path("", include("blog.urls"), name="blog-urls"), 
 ]
