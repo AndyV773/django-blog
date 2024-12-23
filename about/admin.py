@@ -5,7 +5,10 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
-
+    """
+    Admin configuration for the About model, with Summernote integration
+    for rich text.
+    """
     summernote_fields = ('content',)
 
 
@@ -18,9 +21,10 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
-
+    """
+    Admin configuration for the CollaborateRequest model.
+    """
     list_display = ('message', 'read',)
 
 
 # Register your models here.
-

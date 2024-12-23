@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages  # for message styles
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -31,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-andyv773-djangoblog-57pglrgjk4k.ws.codeinstitute-ide.net',
-                '.herokuapp.com']
+                 '.herokuapp.com']
 
 
 # Application definition
@@ -146,6 +147,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Adds bootstrap styles to messages
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.ERROR: 'alert-danger',
+}
 
 
 # Static files (CSS, JavaScript, Images)
